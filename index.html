@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en"><head>
+  
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Magnifying Glass Lens Effect Tutorial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&amp;display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+    
+    body { background: #0f172a; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+
+    h2 { margin-bottom: 20px; color: #38bdf8; text-align: center; }
+    p { margin-bottom: 40px; color: #94a3b8; text-align: center; max-width: 500px; }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      cursor: none; /* Hide default cursor */
+    }
+
+    .main-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .lens {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.3);
+      
+      /* Magic happens here: The background image is identical to main image */
+      background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80');
+      background-repeat: no-repeat;
+      
+      /* Initially hidden */
+      opacity: 0;
+      pointer-events: none; /* So the mouse events pass through to container */
+      transition: opacity 0.2s;
+    }
+
+    /* Show lens on hover */
+    .image-container:hover .lens {
+      opacity: 1;
+    }
+
+  </style>
+
+            <meta name="description" content="A beautiful component imported via Developer Studio AI.">
+            <meta name="robots" content="index, follow">
+            <meta property="og:title" content="CSS Magnifying Glass Lens Effect Tutorial">
+            <meta property="og:description" content="A beautiful component imported via Developer Studio AI.">
+            <meta property="og:image" content="https://codescompiler.com/images/posts/css-magnifying-glass-lens.png">
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:title" content="CSS Magnifying Glass Lens Effect Tutorial">
+            <meta name="twitter:description" content="A beautiful component imported via Developer Studio AI.">
+            <meta name="twitter:image" content="https://codescompiler.com/images/posts/css-magnifying-glass-lens.png">
+          </head>
+<body>
+
+<!-- ── CODESCOMPILER DEMO HEADER ── -->
+<style>
+  #cc-demo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 48px;
+    background: #1a1b26;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: white;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+  }
+  #cc-demo-header a { text-decoration: none; color: white; }
+  .cc-logo { font-size: 14px; font-weight: 900; }
+  .cc-logo span { color: #04aa6d; }
+  .cc-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.12); margin: 0 12px; }
+  .cc-title { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.65); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cc-actions { display: flex; gap: 8px; }
+  .cc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: rgba(255,255,255,0.7);
+  }
+  .cc-btn:hover { background: rgba(255,255,255,0.15); color: white; }
+  .cc-btn svg { width: 14px; height: 14px; }
+  @media (max-width: 600px) {
+    .cc-title { display: none; }
+    .cc-btn span { display: none; }
+  }
+</style>
+<header id="cc-demo-header">
+  <div style="display: flex; align-items: center; overflow: hidden;">
+    <a href="https://codescompiler.com" class="cc-logo" target="_blank" rel="dofollow"><span>Codes</span>Compiler</a>
+    <div class="cc-sep"></div>
+    <h1 class="cc-title" title="CSS Magnifying Glass Lens Effect Tutorial" style="margin: 0; font-size: 13px; font-weight: 600;">📺 CSS Magnifying Glass Lens Effect Tutorial</h1>
+  </div>
+  <div class="cc-actions">
+    <a href="https://codescompiler.com/blog/css-magnifying-glass-lens" class="cc-btn" target="_blank" rel="dofollow" title="Read the full post">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+      <span>Back to Post</span>
+    </a>
+    <a href="index.html" class="cc-btn" target="_blank" download="css-magnifying-glass-lens.html" title="Download source file">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+      <span>Download</span>
+    </a>
+    <button onclick="document.getElementById('cc-demo-header').style.display='none'" class="cc-btn" title="Hide header for fullscreen view">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l5-5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+      <span>Fullscreen</span>
+    </button>
+  </div>
+</header>
+<!-- ================================== -->
+
+
+  <h2>CSS Magnifying Glass Effect</h2>
+  <p>Hover your mouse over the image below to inspect the details using a custom magnifying glass lens!</p>
+
+  <div class="image-container" id="container">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=600&amp;q=80" class="main-image" id="mainImage" alt="Sneaker">
+    <div class="lens" id="lens"></div>
+  </div>
+
+  <script>
+    const container = document.getElementById('container');
+    const lens = document.getElementById('lens');
+    const mainImage = document.getElementById('mainImage');
+
+    // Zoom level (e.g., 2 means the lens background is 2x larger than the image)
+    const zoomLevel = 2;
+
+    container.addEventListener('mousemove', (e) => {
+      // 1. Get the cursor position relative to the container
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      // 2. Center the lens exactly on the cursor
+      const lensRadius = lens.offsetWidth / 2;
+      lens.style.left = `${x - lensRadius}px`;
+      lens.style.top = `${y - lensRadius}px`;
+
+      // 3. Set the size of the background image inside the lens based on zoom level
+      const bgWidth = mainImage.width * zoomLevel;
+      const bgHeight = mainImage.height * zoomLevel;
+      lens.style.backgroundSize = `${bgWidth}px ${bgHeight}px`;
+
+      // 4. Move the background image inside the lens in the opposite direction
+      const bgPosX = (x * zoomLevel) - lensRadius;
+      const bgPosY = (y * zoomLevel) - lensRadius;
+      lens.style.backgroundPosition = `-${bgPosX}px -${bgPosY}px`;
+    });
+  </script>
+
+
+
+</body></html>
